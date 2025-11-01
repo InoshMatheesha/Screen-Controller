@@ -6,7 +6,7 @@ echo ================================================
 echo   STARTING CONTROL SERVER (GITHUB MODE)
 echo ================================================
 echo.
-echo Your IP: 172.28.1.78
+echo Your IP: 192.168.8.158
 echo Control Port: 5555
 echo.
 echo MODE: GitHub (No web server needed!)

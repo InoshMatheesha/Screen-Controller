@@ -6,7 +6,7 @@ echo ================================================
 echo   STARTING REMOTE CONTROL SERVERS
 echo ================================================
 echo.
-echo Your IP: 172.28.1.78
+echo Your IP: 192.168.8.158
 echo Control Port: 5555
 echo Web Server Port: 8000
 echo.

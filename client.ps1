@@ -17,7 +17,7 @@ try {
 } catch {}
 
 # Get server IP and port from environment or use defaults
-$serverIP = if ($env:RCPY_SERVER) { $env:RCPY_SERVER } else { "172.28.1.78" }
+$serverIP = if ($env:RCPY_SERVER) { $env:RCPY_SERVER } else { "192.168.8.158" }
 $serverPort = if ($env:RCPY_PORT) { $env:RCPY_PORT } else { 5555 }
 
 # If passed as variables from Pro Micro

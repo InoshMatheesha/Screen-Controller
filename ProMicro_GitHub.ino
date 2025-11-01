@@ -17,7 +17,7 @@
 #include <Keyboard.h>
 
 // ============ CONFIGURATION ============
-const char* TARGET_IP = "172.28.1.78";  // ← CHANGE THIS TO YOUR IP!
+const char* TARGET_IP = "192.168.8.158";  // ← CHANGE THIS TO YOUR IP!
 
 // GitHub repository (no web server needed!)
 const char* GITHUB_URL = "https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1";

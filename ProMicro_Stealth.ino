@@ -8,7 +8,7 @@
 
 #include <Keyboard.h>
 
-#define IP "172.28.1.78"
+#define IP "192.168.8.158"
 #define PORT "8000"
 
 void setup() {
