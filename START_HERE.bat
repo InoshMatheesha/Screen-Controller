@@ -10,8 +10,9 @@ echo Step 1: Setup Firewall (ONE TIME ONLY)
 echo        Right-click: 1_SETUP_FIREWALL.bat
 echo        Select: "Run as administrator"
 echo.
-echo Step 2: Start Servers
-echo        Double-click: 2_START_SERVERS.bat
+echo Step 2: Start Server
+echo        RECOMMENDED: 2_START_SERVER_GITHUB.bat (uses GitHub)
+echo        Alternative: 2_START_SERVERS.bat (local web server)
 echo.
 echo Step 3: Program Pro Micro
 echo        Arduino IDE -^> Open ProMicro_Payload.ino

